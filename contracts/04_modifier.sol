@@ -1,9 +1,7 @@
-contract ModifierExample {
-    // SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
-contract testModifier{
-
+contract testModifier {
     address public owner;
     constructor() public {
         owner = msg.sender;
