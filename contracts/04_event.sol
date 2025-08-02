@@ -15,7 +15,7 @@ contract Bank {
     }
     
 
-    // 1. 将index.js copy到一个空白目录，执行 node index 
+    // 1. 将index.js copy到一个空白目录，执行 node index ： 实时监控的 
     // 2. remix 发布在 sepolia ，并进行交易行
 
 }
