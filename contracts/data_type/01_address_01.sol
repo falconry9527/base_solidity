@@ -2,6 +2,8 @@
 pragma solidity >=0.8.0;
 
 contract adressBase {
+    // 转账过程中 recipient 都是接受方 
+    // 装出方是调用改函数的人: msg.sender
     function transfer(address _address) public payable {
         address payable recipient = payable(_address);
         recipient.transfer(msg.value); //
