@@ -22,4 +22,5 @@ contract testGolobalValue {
     function isOwner() public view returns (bool) {
         return msg.sender == owner;
     }
+    
 }
