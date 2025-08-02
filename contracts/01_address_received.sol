@@ -3,7 +3,8 @@ pragma solidity >=0.8.0;
 contract ReceiveExample {
     // receive 函数 是专门为接收以太币而设计的，只在没有附加任何调用数据的情况下触发。其功能相对简单，
     // 只处理纯以太币转账
-     event Received(address sender, uint amount);
+    // 收到人是合约
+    event Received(address sender, uint amount);
     receive() external payable {
         emit Received(msg.sender, msg.value);
     }

@@ -1,0 +1,73 @@
+{
+  "accounts": {
+    "account{0}": "0x0E2Ea7deceA74b1dAc4cfaeC79d6e7f702078A41"
+  },
+  "linkReferences": {},
+  "transactions": [
+    {
+      "timestamp": 1754121781244,
+      "record": {
+        "value": "0",
+        "inputs": "()",
+        "parameters": [],
+        "name": "",
+        "type": "constructor",
+        "abi": "0xec204b0c88d98e592b2531d18643e5572652adf75e6243f04b8cd1343f6eedfc",
+        "contractName": "ReceiveExample",
+        "bytecode": "6080604052348015600e575f5ffd5b506101248061001c5f395ff3fe6080604052366041577f88a5966d370b9919b20f3e2c13ff65706f196a4e32cc2c12bf57088f885258743334604051603792919060cb565b60405180910390a1005b7f4fdfaf7cd2ae67f3639149bddef2addc991d3f26e0121df03517ec62523649ca3334604051607092919060cb565b60405180910390a1005b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f60a182607a565b9050919050565b60af816099565b82525050565b5f819050919050565b60c58160b5565b82525050565b5f60408201905060dc5f83018560a8565b60e7602083018460be565b939250505056fea2646970667358221220eb42e59c40d7fb02265e1c25e4a78884b5234a5edfee8e1c86efc897b3d4f10564736f6c634300081e0033",
+        "linkReferences": {},
+        "from": "account{0}"
+      }
+    }
+  ],
+  "abis": {
+    "0xec204b0c88d98e592b2531d18643e5572652adf75e6243f04b8cd1343f6eedfc": [
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "sender",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "name": "FallbackCalled",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "sender",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "name": "Received",
+        "type": "event"
+      },
+      {
+        "stateMutability": "payable",
+        "type": "fallback"
+      },
+      {
+        "stateMutability": "payable",
+        "type": "receive"
+      }
+    ]
+  }
+}
