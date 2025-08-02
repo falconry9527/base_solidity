@@ -1,20 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
-contract testFunction {
-
-    uint public data;
-
-    // view: 声明不修改状态的函数，可读取状态变量。
-    function getData() public view returns (uint) {
-        return data;
-    }
-
-    // pure: 既不读取也不修改状态，仅依赖于函数参数。
-    function add(uint a, uint b) public pure returns (uint) {
-        return a + b;
-    }
-
+pragma solidity >=0.6.0;
+contract ReceiveExample {
     // receive 函数 是专门为接收以太币而设计的，只在没有附加任何调用数据的情况下触发。其功能相对简单，
     // 只处理纯以太币转账
      event Received(address sender, uint amount);
@@ -29,5 +17,4 @@ contract testFunction {
     fallback() external payable {
         emit FallbackCalled(msg.sender, msg.value);
     }
-
 }
