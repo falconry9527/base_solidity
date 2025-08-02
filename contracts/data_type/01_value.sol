@@ -1,24 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
-contract testInt {
+import "hardhat/console.sol";  // Hardhat
 
-    // int 类型
-    function testInt() public pure  () {
-
-        uint256 x=8;
-        uint256 y=10;
-        z = x + y;
-        z = x / y;
-
-        z = x / y;
-        z = x << y;
-        z = x << y;
-
-        uint256 x = 1;
-        uint256 y = ++x; // c = ++a;
+contract testValue {
+    // int
+    function testInt() public {
+        int256 x = 4;
+        int256 y = 4;
+        int256 z = x + y;
+        console.log("int256 z = x + y: ", z);
     }
-
-
-    
 }
