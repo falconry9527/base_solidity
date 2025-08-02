@@ -11,27 +11,4 @@ contract testArray {
         return tempArray;
     }
 
-    // mapping
-    mapping(address => uint256) public balances;
-    function testMapping() public view {
-        uint256 balance = balances[msg.sender];
-    }
-
-    // struct
-    struct CustomType {
-        bool myBool;
-        uint256 myInt;
-    }
-    CustomType ct = CustomType({myBool: true, myInt: 2});
-
-    function testStruct() public view {
-        uint256 balance = balances[msg.sender];
-    }
-
-    // string
-    // function to return string length
-    function getStringLength() public pure returns (uint256) {
-        string memory myString = "Hello, Solidity!";
-        return bytes(myString).length;
-    }
 }
