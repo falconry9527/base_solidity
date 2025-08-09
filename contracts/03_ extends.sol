@@ -4,7 +4,7 @@ contract Owned {
     address payable public owner;
 
     constructor() public {
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
 
     function setOwner(address _owner) public virtual {
