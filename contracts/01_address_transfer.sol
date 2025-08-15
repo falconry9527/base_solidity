@@ -10,9 +10,6 @@ contract adressBase {
     // payable ： eth 原生代币需要 payable，erc20 和 erc721不需要 payable
     function transfer(address payable recipient, uint256 value) public payable {
         recipient.transfer(value);
-
-    //  recipient.safeTransferETH(value);
-
     }
 
     // ETH 转账的三种方式 ： send
