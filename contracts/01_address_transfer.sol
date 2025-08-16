@@ -35,7 +35,7 @@ contract adressBase {
         IERC20(ercAdress).transferFrom(from, to, value);
     }
 
-    // ERC20 转账 ： 方式二 call
+    // ERC20 转账 ： 方式一 transferFrom - 使用 call 调用
     // metaNodeSwap  ：./libraries/TransferHelper.sol
     function safeTransfer(address ercAdress, address to, uint256 value) internal {
         (bool success, bytes memory data) = ercAdress.call(
