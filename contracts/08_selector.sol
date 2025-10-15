@@ -12,7 +12,8 @@ contract Token {
 
 // 调用合约
 contract Caller {
-    function callDeposit(address tokenAddress, uint256 amount) external returns (bool) {
+    // 1️⃣ 使用 encodeWithSelector
+    function callDepositWithSelector (address tokenAddress, uint256 amount) external returns (bool) {
         // 1️⃣ 函数选择器（前4字节）
         bytes4 selector = bytes4(keccak256("deposit(uint256)"));
 
@@ -25,4 +26,18 @@ contract Caller {
 
         return success;
     }
+
+    // 2️⃣ 使用 encodeWithSignature
+    function callDepositWithSignature(address tokenAddress, uint256 amount) external returns (bool) {
+        // 直接用函数签名字符串
+        bytes memory data = abi.encodeWithSignature("deposit(uint256)", amount);
+
+        // 发起低层调用
+        (bool success, ) = tokenAddress.call(data);
+        require(success, "Call failed with signature");
+
+        return success;
+    }
 }
+
+
