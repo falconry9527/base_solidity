@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./DeployMe.sol";
+import "./07_create2_DeployMe.sol";
 
 contract Factory {
     event Deployed(address addr, uint256 salt);
