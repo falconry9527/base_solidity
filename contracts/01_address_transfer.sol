@@ -31,6 +31,10 @@ contract adressBase {
         address to,
         uint256 value
     ) internal {
+        // 查询 from 地址授权给 msg.sender 的剩余额度
+        uint256 allowed = IERC20(ercAdress).allowance(from, msg.sender);
+        require(allowed >= value, "Not enough allowance");
+
         // IERC20(token).transfer(to, value);
         IERC20(ercAdress).transferFrom(from, to, value);
     }
