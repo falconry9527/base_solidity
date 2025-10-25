@@ -9,8 +9,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /**
  * @title MyToken
  * @notice ERC20 模板：可增发、可销毁、总量上限、团队锁仓
+ * ERC20Capped : 设置最大总量   ERC20Capped(cap)
+ * ERC20Burnable : 可销毁 
+ * Ownable : 访问控制 Ownable(msg.sender)  
  */
-contract MyToken is ERC20Capped, ERC20Burnable,Ownable{
+contract MyToken is ERC20Capped,Ownable{
     // 团队锁仓信息
     struct Vesting {
         uint256 amount;
@@ -93,11 +96,5 @@ contract MyToken is ERC20Capped, ERC20Burnable,Ownable{
         }
     }
 
-    // 必须显式 override 列出所有含有 _update 的基类
-    // ERC20Capped ,每次 mint的时候，会检查最大总量
-    function _update(address from, address to, uint256 value) internal virtual override(ERC20, ERC20Capped) {
-        // 通常直接调用 super 即可（遵循C3线性化）
-        super._update(from, to, value);
-        // 如果需要在这里加额外逻辑可以加，但注意不要重复调用基类导致双重副作用
-    }
+
 }
